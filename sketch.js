@@ -53,7 +53,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1360, 695);
   frameRate(6);
 
   test = createInput();
