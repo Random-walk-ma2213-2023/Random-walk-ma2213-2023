@@ -102,7 +102,7 @@ function draw() {
   cust();
 
   fill("#B8621B");
-  rect(width / 2 - 100, 520, width / 2 - 50, 43.75);
+  rect(width / 2 - 100, height - 175, width / 2 - 50, 43.75);
   textAlign(LEFT);
   fill("white");
   text("Rata-rata jarak tempuh: ", width / 2 - 85, height - 150);
@@ -162,7 +162,7 @@ function Member() {
 
 function cust() {
   fill("#B8621B");
-  rect(50, 150, width / 4 + 50, 420);
+  rect(50, height / 2 - 200, width / 4 + 50, 420);
 
   a = width / 4;
   b = height / 2;
