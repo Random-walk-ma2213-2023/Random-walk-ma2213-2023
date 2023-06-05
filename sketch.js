@@ -50,6 +50,8 @@ function preload() {
   bg = loadImage("grass field.png");
   maze1 = loadImage("maze1.png");
   maze2 = loadImage("maze2.png");
+  LMath = loadImage("Logo_Prodi.png");
+  LITERA = loadImage("Logo_ITERA.png");
 }
 
 function setup() {
@@ -87,9 +89,9 @@ function setup() {
   res.mousePressed(Res);
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
+// function windowResized() {
+//   resizeCanvas(windowWidth, windowHeight);
+// }
 
 function draw() {
   background("#000000");
@@ -114,8 +116,10 @@ function head() {
   noStroke();
   rect(0, 0, width, 100);
 
-  image(maze1, 0, 0, width / 2 - 150, 100);
-  image(maze2, width / 2 + 150, 0, width / 2 - 150, 100);
+  image(maze1, 0, 0, width / 2 - 230, 100);
+  image(maze2, width / 2 + 235, 0, width / 2 - 150, 100);
+  image(LITERA, width / 2 - 225, 12.5, 75, 75);
+  image(LMath, width / 2 + 150, 12.5, 75, 75);
 
   textSize(25);
   textAlign(CENTER);
@@ -125,7 +129,7 @@ function head() {
   textStyle(NORMAL);
   textSize(20);
   text("Visualisasi Dalam Sains", width / 2, 65);
-  text("T.A 2022/2023", width / 2, 90);
+  text("MA2213", width / 2, 90);
 }
 
 function Member() {
@@ -171,12 +175,16 @@ function cust() {
   fill("white");
   textStyle(NORMAL);
   textAlign(LEFT);
-  text("Jumlah percobaan yang ingin dilakukan: ", a - 275, b - 150);
+  text("Jumlah ", a - 275, b - 150);
+  textStyle(ITALIC);
+  text("agent ", a - 210, b - 150);
+  textStyle(NORMAL);
+  text("yang diinginkan:", a - 157, b - 150);
   text("Jumlah langkah yang ingin ditempuh: ", a - 275, b - 95);
-  text("Peluang gerak ke arah Utara: ", a - 275, b - 40);
-  text("Peluang gerak ke arah Selatan: ", a - 275, b + 15);
-  text("Peluang gerak ke arah Timur: ", a - 275, b + 70);
-  text("Peluang gerak ke arah Barat: ", a - 275, b + 125);
+  text("Peluang(%) gerak ke arah Utara: ", a - 275, b - 40);
+  text("Peluang(%) gerak ke arah Selatan: ", a - 275, b + 15);
+  text("Peluang(%) gerak ke arah Timur: ", a - 275, b + 70);
+  text("Peluang(%) gerak ke arah Barat: ", a - 275, b + 125);
 }
 
 function distance() {
@@ -237,10 +245,9 @@ function check() {
       colony.push(new Ant((3 * width) / 4 - 125, (height - 25) / 2));
       colony[i].move();
     }
-    // ant1.move();
   } else {
     textAlign(CENTER);
-    text("Peluang total harus 100", (3 * width) / 8 - 275, height / 2 + 190);
+    text("Total peluang harus 100%", (3 * width) / 8 - 275, height / 2 + 190);
   }
 }
 
